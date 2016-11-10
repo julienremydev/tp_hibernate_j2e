@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: Université Nancy 2
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="forum.Message" table="Message" lazy="false">
+		<id column="id_message" name="id_message">
+        	<generator class="increment"/>
+    	</id>
+    	<many-to-one  name="abonne" column="id_abonne" class="forum.Abonne" /> 
+		<property name="objet" column="objet" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="corps" column="corps" type="string" length="255" not-null="true" lazy="false"/>
+	</class>
+</hibernate-mapping>

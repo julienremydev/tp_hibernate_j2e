@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: Université Nancy 2
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="forum.Annuaire" table="Annuaire" lazy="false">
+		<id name="nom" column="nom" type="string">
+			<generator class="assigned">
+			</generator>
+		</id>
+        <set name="topic" table="topic">
+      		<key column="nom_annuaire"/>
+      		<many-to-many class="forum.Abonne" column="login"/>
+    	</set>
+	</class>
+</hibernate-mapping>

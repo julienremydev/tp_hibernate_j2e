@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class abstract="true" name="forum.Abonne" table="Abonne">
+    <id column="login" type="string" name="login">
+    <generator class="assigned">
+			</generator>
+    </id>
+    <property name="mdp"/>
+    <union-subclass name="forum.Particulier" table="Particulier">
+      <property column="nom" name="nom"/>
+      <property column="prenom" name="prenom"/>
+    </union-subclass>
+    <union-subclass name="forum.Entreprise" table="Entreprise">
+      <property column="raisonSociale" name="raisonSociale"/>
+    </union-subclass>
+  </class>
+</hibernate-mapping>

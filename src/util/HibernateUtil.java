@@ -7,14 +7,13 @@ public class HibernateUtil {
 	public static final SessionFactory sessionFactory;
 	static {
 		try {
-			// CrÃ©ation de la SessionFactory ï¿½ partir de hibernate.cfg.xml
+			// Création de la SessionFactory à partir de hibernate.cfg.xml
 			sessionFactory = new Configuration().configure().buildSessionFactory();
 				
-		} catch (HibernateException ex) {
-
-			System.out.println("Initial SessionFactory creation failed." + ex);
-			throw new RuntimeException("Problï¿½me de configuration : " + ex.getMessage() );
-		}
+		} catch (Throwable ex) {
+			// Make sure you log the exception, as it might be swallowed
+			System.err.println("Initial SessionFactory creation failed." + ex);
+			throw new ExceptionInInitializerError(ex);}
 	}
 
 	public static final ThreadLocal session = new ThreadLocal();

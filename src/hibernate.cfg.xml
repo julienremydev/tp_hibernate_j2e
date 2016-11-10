@@ -3,16 +3,16 @@
 <hibernate-configuration>
   <session-factory>
     <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="connection.driver_class">org.gjt.mm.mysql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/vin2</property>
+    <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/forum</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">1992</property>
+    <property name="hibernate.connection.password">jaimelecafe</property>
     <property name="show_sql">true</property>
     <!-- Drop and re-create the database schema on startup -->
     <property name="hbm2ddl.auto">create</property> 
     <!-- Mapping files -->
-    <mapping resource="vins/vin4.hbm.xml"/>
-    <mapping resource="vins/buveur.hbm.xml"/>
-    <mapping resource="vins/producteur.hbm.xml"/> 
+    <mapping resource="forum/Abonne.hbm.xml"/>
+    <mapping resource="forum/Annuaire.hbm.xml"/>
+    <mapping resource="forum/Message.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
