@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="vins.Vin" table="vin">
+    <id column="Numero" name="numero">
+      <generator class="increment"/>
+    </id>
+    <property name="nom"/>
+    <property name="annee"/>
+    <property name="nbBouteilles"/>
+    <property name="prix"/>
+    <joined-subclass name="vins.VinDeGarde" table="vinDeGarde">
+      <key column="Numero"/>
+      <property column="NbAnMax" name="nbAnneeMax"/>
+      <property column="NbAnMin" name="nbAnneeMin"/>
+    </joined-subclass>
+    <joined-subclass name="vins.VinConsommable" table="vinConso">
+      <key column="Numero"/>
+    </joined-subclass>
+  </class>
+</hibernate-mapping>

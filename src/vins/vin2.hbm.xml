@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="vins.Vin" table="vin">
+    <id column="Numero" name="numero">
+      <generator class="increment"/>
+    </id>
+    <discriminator column="VIN_TYPE" type="string" />
+    <property name="nom"/>
+    <property name="annee"/>
+    <property name="nbBouteilles"/>
+    <property name="prix"/>
+    <subclass discriminator-value="VINDEGARDE" name="vins.VinDeGarde">
+      <property column="NbAnMax" name="nbAnneeMax"/>
+      <property column="NbAnMin" name="nbAnneeMin"/>
+    </subclass>
+    <subclass discriminator-value="VINCONSO" name="vins.VinConsommable">
+		</subclass>
+  </class>
+</hibernate-mapping>
