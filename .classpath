@@ -14,5 +14,9 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Users/bat_3/Documents/GitHub/tp_hibernate_j2e/orm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bat_3/Downloads/jboss-j2ee-4.3.0.jar/jboss-j2ee-4.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bat_3/Downloads/javax.ejb.jar/javax.ejb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bat_3/Downloads/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bat_3/Downloads/hamcrest-all-1.3.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

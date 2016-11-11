@@ -3,6 +3,7 @@ package util;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 
+@SuppressWarnings("deprecation")
 public class HibernateUtil {
 	public static final SessionFactory sessionFactory;
 	static {
@@ -16,7 +17,7 @@ public class HibernateUtil {
 			throw new ExceptionInInitializerError(ex);}
 	}
 
-	public static final ThreadLocal session = new ThreadLocal();
+	public static final ThreadLocal<Session> session = new ThreadLocal<Session>();
 
 	public static Session currentSession() throws HibernateException {
 		Session s = (Session) session.get();
