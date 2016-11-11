@@ -6,11 +6,36 @@
 		<servlet-name>Index</servlet-name>
 		<servlet-class>servlet.Index</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Forum</servlet-name>
+		<servlet-class>servlet.Forum</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Deconnexion</servlet-name>
+		<servlet-class>servlet.Deconnexion</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>Index</servlet-name>
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Forum</servlet-name>
+		<url-pattern>/forum</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Deconnexion</servlet-name>
+		<url-pattern>/deco</url-pattern>
+	</servlet-mapping>
+
+<filter>
+	<filter-name>RestrictionFilter</filter-name>
+	<filter-class>filters.RestrictionFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>RestrictionFilter</filter-name>
+	<url-pattern>/forum</url-pattern>
+</filter-mapping>
 
 	<listener>
 		<listener-class>util.HibernateListener</listener-class>

@@ -10,6 +10,7 @@
 	href="<c:url value="/include/style.css"/>" />
 </head>
 <body>
+<div> <p class="info">${ message }</p> </div>
 	<form id="inscriptionParticulier" method="post" action="<c:url value="/index"/>">
 		<h1>Inscription Particulier</h1>
 		<fieldset id="inputs">
