@@ -19,11 +19,11 @@
 		<ul class="tab-group">
 			<li class="tab"><a href="#signup_p">Particulier</a></li>
 			<li class="tab"><a href="#signup_e">Entreprise</a></li>
-			<li class="tab active"><a href="#login">Connexion</a></li>
+			<li id="login-tab" class="tab active"><a href="#login">Connexion</a></li>
 		</ul>
 
 		<div class="tab-content">
-			<div id="signup_p">
+			<div class = "subscribe" id="signup_p">
 				<h1>Inscription</h1>
 
 				<form id="inscriptionParticulier" method="post"
@@ -63,7 +63,7 @@
 
 			</div>
 
-			<div id="signup_e">
+			<div class = "subscribe" id="signup_e">
 				<h1>Inscription</h1>
 
 				<form id="inscriptionEntreprise" method="post" action="<c:url value="/index"/>">
